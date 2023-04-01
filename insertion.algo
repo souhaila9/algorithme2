@@ -1,0 +1,40 @@
+FUNCTION dotProd (v1,v2 : ARRAY_OF INTEGER [5];) : INTEGER
+VAR
+    dot : INTEGER :=0
+    i : INTEGER
+BEGIN
+    IF (v1.length <> v2.length) THEN
+        RETURN ("v1 and v2 with diff size")
+    ELSE
+        FOR i FROM 0 TO v1.length STEP 1  DO
+            dot := dot + (v1[i] + v2[i])
+        END_FOR
+    END_IF
+    RETURN dot ;
+END
+
+ALGORITHM vect_orth
+VAR
+    v1 , v2 : ARRAY_OF INTEGER [5]
+    dot : INTEGER
+BEGIN
+    FOR i FROM 0 TO v1.length STEP 1  DO
+        write("enter a value of v1[i]")
+    END_FOR
+    read (v1)
+
+    FOR i FROM 0 TO v2.length STEP 1  DO
+        write("enter a value of v2[i]")
+    END_FOR
+    read (v2)
+
+    dot := dotProd(v1,v2)
+
+    IF (dot := 0) THEN
+        write("v1 and v2 orth")
+    ELSE
+        write("v1 and v2 are not orth")
+    END_IF
+
+
+END

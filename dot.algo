@@ -1,0 +1,26 @@
+ALGORITHM sorting
+VAR
+    set : ARRAY_OF INTEGER[10];
+    aux : INTEGER
+    i,j : INTEGER
+BEGIN
+    //remplissage array
+
+    FOR i FROM 0 TO set.length STEP 1  DO
+        write("enter a value of set [i]")
+    END_FOR
+    read (set)
+
+    FOR i FROM 1 TO set.length STEP 1  DO
+        FOR j=i and j>0 STEP -1  DO
+            IF (arr[j] < arr[j-1]) THEN
+                aux : = arr[j]
+                arr[j] := arr[j-1]
+                arr[j-1] := aux              
+            END_IF
+        END_FOR
+
+    END_FOR
+
+    write (set)
+END
